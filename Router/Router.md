@@ -4,7 +4,7 @@
 	<summary class="section-summary">Router Configuratie</summary>
 
 ```
-Using 1599 bytes
+Using 1742 bytes
 !
 version 15.4
 no service timestamps log datetime msec
@@ -12,7 +12,7 @@ no service timestamps debug datetime msec
 service password-encryption
 security passwords min-length 8
 !
-hostname Router
+hostname Router1
 !
 !
 !
@@ -30,6 +30,8 @@ no ipv6 cef
 !
 !
 !
+username Ilya
+username Ilya1234 secret 5 $1$mERr$RRWtUcauudXyWQsvOXaHw.
 !
 !
 !
@@ -39,6 +41,8 @@ no ipv6 cef
 !
 !
 !
+!
+ip domain-name TechNova.com
 !
 !
 spanning-tree mode pvst
@@ -78,6 +82,8 @@ interface Vlan1
  no ip address
  shutdown
 !
+router rip
+!
 ip classless
 !
 ip flow-export version 9
@@ -107,11 +113,11 @@ line aux 0
 !
 line vty 0 4
  password 7 082243401A16091243595F
- login
+ login local
+ transport input ssh
 !
 !
 !
 end
-
 ```
 </details>
